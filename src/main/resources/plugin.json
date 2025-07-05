@@ -7,8 +7,8 @@
   "javaplugin": "net.mcreator.vcs.Launcher",
   "info": {
     "name": "MCreator VCS plugin",
-    "author": "MCreator, Defeatomizer, Tucky143(Port)",
-    "version": "2025.1, 2025.2",
+    "author": "Tucky143, unipm",
+    "version": "2025.2",
     "updateJSONURL": "https://drive.google.com/uc?id=16RSgaaCRiGgudufRfUtYVgU7c655Prrf",
     "pluginPageID": 117576
   }
