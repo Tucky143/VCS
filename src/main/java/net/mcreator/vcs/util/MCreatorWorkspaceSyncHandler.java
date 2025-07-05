@@ -282,9 +282,9 @@ public class MCreatorWorkspaceSyncHandler implements ICustomSyncHandler {
 			}
 
 			// LANGUAGE MAP
-			Map<String, ConcurrentHashMap<String, String>> base_language_map = baseWorkspace.getLanguageMap();
-			Map<String, ConcurrentHashMap<String, String>> local_language_map = localWorkspace.getLanguageMap();
-			Map<String, ConcurrentHashMap<String, String>> remote_language_map = remoteWorkspace.getLanguageMap();
+			Map<String, LinkedHashMap<String, String>> base_language_map = baseWorkspace.getLanguageMap();
+			Map<String, LinkedHashMap<String, String>> local_language_map = localWorkspace.getLanguageMap();
+			Map<String, LinkedHashMap<String, String>> remote_language_map = remoteWorkspace.getLanguageMap();
 
 			DiffResult<String> langMapDiffLocalToBase = MapDiff.getMapDiff(base_language_map, local_language_map);
 			DiffResult<String> langMapDiffRemoteToBase = MapDiff.getMapDiff(base_language_map, remote_language_map);
@@ -321,9 +321,9 @@ public class MCreatorWorkspaceSyncHandler implements ICustomSyncHandler {
 						&& langMergeHandle.getRemoteChange() == DiffEntry.ChangeType.MODIFY) {
 					String language = langMergeHandle.getLocal();
 
-					ConcurrentHashMap<String, String> base_translation = base_language_map.get(language);
-					ConcurrentHashMap<String, String> local_translation = local_language_map.get(language);
-					ConcurrentHashMap<String, String> remote_translation = remote_language_map.get(language);
+					LinkedHashMap<String, String> base_translation = base_language_map.get(language);
+					LinkedHashMap<String, String> local_translation = local_language_map.get(language);
+					LinkedHashMap<String, String> remote_translation = remote_language_map.get(language);
 
 					DiffResult<String> langMapContentsDiffLocalToBase = MapDiff.getMapDiff(base_translation,
 							local_translation);

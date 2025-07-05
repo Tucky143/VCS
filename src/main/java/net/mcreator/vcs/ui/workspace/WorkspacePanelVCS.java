@@ -372,9 +372,9 @@ public class WorkspacePanelVCS extends AbstractWorkspacePanel {
 	@Override public void refilterElements() {
 		if (WorkspaceVCS.getVCSWorkspace(mcreator.getWorkspace()) != null) {
 			if (workspacePanel != null)
-				sorter.setRowFilter(RowFilter.regexFilter(workspacePanel.search.getText()));
+				sorter.setRowFilter(RowFilter.regexFilter(workspacePanel.getSearchTextField().getText()));
 			else if (mcreator instanceof ResourcePackMaker resPack)
-				sorter.setRowFilter(RowFilter.regexFilter(resPack.getWorkspacePanel().search.getText()));
+				sorter.setRowFilter(RowFilter.regexFilter(resPack.getWorkspacePanel().getSearchTextField().getText()));
 			else
 				sorter.setRowFilter(null);
 		}
