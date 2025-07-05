@@ -54,6 +54,8 @@ public class VCSSetupDialogs {
 		JCheckBox savePassword = L10N.checkbox("dialog.vcs.setup_save_password");
 		JButton newToken = L10N.button("dialog.vcs.setup_git_access_token.create");
 		JLabel pwLabel = L10N.label("dialog.vcs.setup_git_password");
+		System.out.println("Token Label: " + L10N.t("dialog.vcs.setup_git_access"));
+		System.out.println("Token Button: " + L10N.t("dialog.vcs.setup_git_access_token.create"));
 
 		AtomicBoolean validUri = new AtomicBoolean(false);
 		try {
@@ -77,7 +79,7 @@ public class VCSSetupDialogs {
 			@Override public void changedUpdate(DocumentEvent e) {
 				boolean githubRepo = GITHUB_URL.matcher(remote.getText()).find();
 				pwLabel.setText(githubRepo ?
-						L10N.t("dialog.vcs.setup_git_access_token") :
+						L10N.t("dialog.vcs.setup_git_access") :
 						L10N.t("dialog.vcs.setup_git_password"));
 				newToken.setVisible(validUri.get() && githubRepo);
 			}
