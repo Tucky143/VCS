@@ -66,7 +66,7 @@ import java.io.File;
 			SwingUtilities.invokeLater(() -> {
 				MCreator mcreator = event.getMCreator();
 				if (mcreator instanceof ModMaker mod) {
-					mod.getWorkspacePanel().addVerticalTab("vcs", L10N.t("workspace.category.remote_workspace"),
+					mod.getWorkspacePanel().addVerticalTab(L10N.t("workspace.category.remote_workspace"),
 							new WorkspacePanelVCS(mod.getWorkspacePanel()));
 				} else if (loaded) {
 					new WorkspacePanelVCS(mcreator);
